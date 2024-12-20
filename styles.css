@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0; /* Corrected from pad to padding */
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    background-color: #F5EFE7;
+}
+
+body > h1 {
+    font-size: 4em;
+    text-align: center;
+    color: #213555;
+}
+
+h2 {
+    color: #3E5879;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+h3 {
+    width: 100%;
+    background-color: #3E5879;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #F5EFE7;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    justify-content: flex-start;
+    letter-spacing: 1px;
+}
+
+.innerDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.homework-item {
+    background-color: #F5EFE7;
+    width: 40%;
+    height: 15em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease-in-out; /* Added transition for hover */
+}
+
+.homework-item:hover {
+    transform: scale(1.02); /* Corrected scale with transform */
+}
+
+ul {
+    margin-bottom: 5px;
+}
+
+.view-detail {
+    background-color: #213555;
+    color: #fff;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: small;
+    letter-spacing: 0.6px;
+    margin-top: 4px;
+}
+
+#HTMLoverlay{
+    position: fixed; /* Positioned absolutely inside the parent container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color:#213555b0; /* Semi-transparent black */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 1; 
+    color: #F5EFE7;
+}
+
+.close-btn{
+    position: absolute;
+    background-color: #213555;
+    color: #fff;
+    outline: none;
+    padding: 10px;
+    border: 0.2px solid #F5EFE7;
+    border-radius: 2px;
+    top: 7%;
+    right: 5%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.close-btn:hover{
+    background-color: #07214b;
+    border-radius: 10px;
+}
+
+.overlay-2div{
+    background-color: #213555;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    position: absolute;
+    top: 10%;
+    left:10%;
+    padding: 50px;
+    border-radius: 50px;
+}
+
+a{
+    color: inherit;
+}
+
+pre{
+    border: 0.5px solid #000;
+    border-radius: 10px;
+    width: 30%;
+    margin: 2px;
+    color: #ff0055;
+}
+@media (max-width: 900px) {
+    .innerDiv {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .homework-item {
+        width: 90%;
+    }
+}
