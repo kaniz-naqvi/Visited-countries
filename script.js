@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       image: "position",
       detail:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis.",
+        "This project focused on learning CSS positioning, navigation styling, product card design, and icon integration. Key skills included mastering absolute and relative positioning, using rotate for dynamic effects, styling buttons and typography.",
+      code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/position",
       code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/position",
       demo: "position/index.html",
+      title: "Position Practice in CSS",
     },
   ];
 
@@ -18,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="card col-lg-5">
         <img src="./images/${p.image}.PNG" class="border mt-2 w-100" alt="${p.image}" />
         <div class="details p-3">
-          <h3>Title</h3>
+          <h3>${p.title}</h3>
           <p>${p.detail}</p>
           
 <button class="btn btn-primary text-white">
