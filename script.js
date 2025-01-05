@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "position",
       detail:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis.",
-      code: "",
+      code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/position",
       demo: "position/index.html",
     },
   ];
@@ -21,8 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3>Title</h3>
           <p>${p.detail}</p>
           
-          <button class="btn btn-primary"><a href=${p.demo}>Live demo</a></button>
-          <button class="btn btn-success">CLICK me</button>
+<button class="btn btn-primary text-white">
+  <a href="${p.code}" class="text-white text-decoration-none" target="_blank">Code</a>
+</button>
+<button class="btn btn-success text-white">
+  <a href="${p.demo}" class="text-white text-decoration-none" target="_blank">Live demo</a>
+</button>
           
         </div>
       </div>
