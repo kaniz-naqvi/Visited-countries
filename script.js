@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
       detail:
         "This project focused on learning CSS positioning, navigation styling, product card design, and icon integration. Key skills included mastering absolute and relative positioning, using rotate for dynamic effects, styling buttons and typography.",
       code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/position",
-      code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/position",
       demo: "position/index.html",
       title: "Position Practice in CSS",
     },
