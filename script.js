@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       image: "portfolio",
-      detail:"This project was focused on CSS positioning and flex box, uses before after psudo elements to add images."
+      detail:
+        "This project was focused on CSS positioning and flex box, uses before after psudo elements to add images.",
       code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/simple-portfolio",
       demo: "simple-portfolio/index.html",
       title: "Position Practice in CSS",
