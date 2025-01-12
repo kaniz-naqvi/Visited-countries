@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       image: "position",
       detail:
-        "This project focused on learning CSS positioning, navigation styling, product card design, and icon integration. Key skills included mastering absolute and relative positioning, using rotate for dynamic effects, styling buttons and typography.",
+        "This project focused on learning CSS positioning, navigation styling, product card design, and icon integration.",
       code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/position",
       demo: "position/index.html",
       title: "Position Practice in CSS",
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       detail:
         "This project was focused on CSS positioning and flex box, uses before after psudo elements to add images.",
       code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/simple-portfolio",
-      demo: "simple-portfolio/index.html",
+      demo: "simple portfolio/index.html",
       title: "Position Practice in CSS",
     },
   ];
