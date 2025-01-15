@@ -1,47 +1,56 @@
-const micButton = document.getElementById("mic");
-
-// Toggle mic active state on click
-micButton.addEventListener("click", () => {
-  micButton.classList.toggle("mic-active");
-
-  toggleMic();
-});
-const playBtn = document.querySelector(".playback");
-let canRecord = false,
-  isRecording = false;
+const mic = document.querySelector("#mic");
+const playback = document.querySelector(".playback");
 let recorder = null;
 let chunks = [];
-function setUpAudio() {
-  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices
-      .getUserMedia({
-        audio: true,
-      })
-      .then(setUpStream)
-      .catch((error) => console.error(error.message));
-  }
+let isRecording = false;
+
+mic.addEventListener("click", () => {
+  mic.classList.toggle("mic-active");
+  audioToggle();
+});
+
+// Set up audio
+function setAudio() {
+  navigator.mediaDevices
+    .getUserMedia({ audio: true })
+    .then(setStream)
+    .catch((err) => {
+      console.error("Error accessing microphone:", err);
+      alert("Please allow microphone access.");
+    });
 }
-function setUpStream(stream) {
+
+// Stream setup and recorder initialization
+function setStream(stream) {
   recorder = new MediaRecorder(stream);
   recorder.ondataavailable = (e) => {
     chunks.push(e.data);
   };
-  recorder.onstop = (e) => {
+
+  // Automatically triggered when recorder stops
+  recorder.onstop = () => {
     const blob = new Blob(chunks, { type: "audio/ogg" });
-    chunks = [];
+    chunks = []; // Reset chunks after creating the Blob
     const audioURL = window.URL.createObjectURL(blob);
-    playBtn.src = audioURL;
+    playback.src = audioURL;
   };
 }
-function toggleMic() {
+
+// Toggle start/stop recording based on current state
+function audioToggle() {
+  if (!recorder) {
+    alert("Recorder not initialized. Please allow microphone access.");
+    return; // Prevent further execution if recorder is null
+  }
+
   if (isRecording) {
-    // Stop recording if already recording
     recorder.stop();
     isRecording = false;
   } else {
-    // Start recording
     recorder.start();
     isRecording = true;
   }
 }
-setUpAudio();
+
+// Initialize audio setup
+setAudio();
