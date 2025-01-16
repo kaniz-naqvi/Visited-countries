@@ -21,6 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
       demo: "simple portfolio/index.html",
       title: "Position Practice in CSS",
     },
+    {
+      image: "Our team",
+      detail:
+        "This project was focused on CSS flex box, use flex box to made it responsive.",
+      code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/our%20team",
+      demo: "our team/index.html",
+      title: "Our Team cards",
+    },
   ];
 
   // Array to hold JS practice project details
