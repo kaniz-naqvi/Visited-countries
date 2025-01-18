@@ -29,6 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
       demo: "our team/index.html",
       title: "Our Team cards",
     },
+    {
+      image: "easypaisa",
+      detail:
+        "This project was focused on CSS box shadow, use box inset shadow to make this 3d look.",
+      code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/box%20shadow",
+      demo: "box shadow/index.html",
+      title: "Box shadow practice",
+    },
   ];
 
   // Array to hold JS practice project details
