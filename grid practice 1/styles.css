@@ -112,7 +112,7 @@ img {
 }
 .row-1-div-8 {
   position: relative;
-  margin-top: 130px;
+  margin-top: 149px;
   align-self: center;
   justify-self: center;
   background-image: url("img/engine.png");
@@ -129,5 +129,5 @@ img {
   position: absolute;
   width: 30%;
   aspect-ratio: 1;
-  top: -80%;
+  top: -120%;
 }
