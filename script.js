@@ -37,6 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
       demo: "box shadow/index.html",
       title: "Box shadow practice",
     },
+    {
+      image: "ass1",
+      detail:
+        "This project was focused on CSS box shadow, use box inset shadow to make this 3d look.",
+      code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/grid%20practice%201",
+      demo: "grid practice 1/index.html",
+      title: "Box shadow practice",
+    },
   ];
 
   // Array to hold JS practice project details
@@ -54,8 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Iterate over the practiceHTML array and dynamically create cards
   practiceHTML.forEach((p) => {
     let HTMLinnerHTML = `
-      <div class="card col-lg-5">
-      <a href=${p.demo}>
+      <div class="card m-2 col-lg-3">
+      <a href=${p.demo} target="_blank">
         <img src="./images/${p.image}.PNG" class="border mt-2 w-100" alt="${p.image}" />
         </a>
         <div class="details p-3">
@@ -79,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Iterate over the practiceJS array and dynamically create cards
   practiceJS.forEach((p) => {
     let JSinnerHTML = `
-      <div class="card col-lg-5">
+      <div class="card m-2 col-lg-3">
       <a href=${p.demo}>
         <img src="./images/${p.image}.PNG" class="border mt-2 w-100" alt="${p.image}" />
         </a>

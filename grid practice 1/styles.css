@@ -15,7 +15,8 @@ img {
   max-width: 100dvw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  overflow-y: hidden;
 }
 .grid-container > div {
   height: 90px;
