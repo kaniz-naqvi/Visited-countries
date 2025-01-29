@@ -39,11 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       image: "ass1",
-      detail:
-        "This project was focused on CSS box shadow, use box inset shadow to make this 3d look.",
+      detail: "This was the practice of grid + positions.",
       code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/grid%20practice%201",
       demo: "grid practice 1/index.html",
-      title: "Box shadow practice",
+      title: "Grid practice 1",
+    },
+    {
+      image: "ass2",
+      detail: "This was the practice of grid + flex box.",
+      code: "https://github.com/kaniz-naqvi/My-full-stack-work/tree/main/grid%20practice%202",
+      demo: "grid practice 2/index.html",
+      title: "Grid practice 2",
     },
   ];
 
