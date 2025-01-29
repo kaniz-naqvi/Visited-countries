@@ -128,3 +128,15 @@ h2 {
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 600px) {
+  .grid-container {
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .grid-container > div {
+    width: 100%;
+    height: fit-content;
+  }
+}
