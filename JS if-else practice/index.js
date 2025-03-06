@@ -119,6 +119,15 @@ console.log(getGrades(50, 60, 40, 40, 30)); // Grade E
 /********** Question 11 *********/
 //Write a program to find all roots of a quadratic equation.
 function quadraticRoot(a, b, c) {
-  let D = b * b - 4(a)(c);
-  let quadraticEqu;
+  // Calculate the discriminant
+  if (a == 0) return `Not a quadratic equation`;
+  const discriminant = b * b - 4 * a * c;
+  let root1, root2;
+  if (discriminant > 0) {
+    root1 = (-b - Math.sqrt(discriminant)) / (2 * a);
+    root2 = (-b + Math.sqrt(discriminant)) / (2 * a);
+  }
+  return `${root1}, ${root2}`;
 }
+
+console.log(quadraticRoot(2, 5, 3));
