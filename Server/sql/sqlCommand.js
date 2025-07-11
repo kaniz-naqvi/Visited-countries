@@ -2,15 +2,19 @@ import db from "../db/db.js";
 import { validateTable, validateColumns } from "../utils/validateSchema.js";
 
 // Get all rows by key = value
-export const getAllFromTable = async (table, key, value) => {
+export const getAllFromTable = async (table, key, value, exact = true) => {
   try {
     validateTable(table);
     validateColumns([key]);
 
-    const query = await db.query(`SELECT * FROM ${table} WHERE ${key} = $1`, [
-      value,
-    ]);
-    return query.rows;
+    const cleanValue = String(value).trim();
+
+    const query = exact
+      ? `SELECT * FROM ${table} WHERE ${key} = $1`
+      : `SELECT * FROM ${table} WHERE LOWER(${key}) LIKE LOWER('%' || $1 || '%')`;
+
+    const result = await db.query(query, [cleanValue]);
+    return result.rows;
   } catch (error) {
     console.error("getAllFromTable error:", error);
     throw error;

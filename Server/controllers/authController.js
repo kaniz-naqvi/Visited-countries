@@ -1,10 +1,6 @@
-import dotenv from "dotenv";
 import { compare, hash } from "bcrypt";
 import { addValuesInTable, getAllFromTable } from "../sql/sqlCommand.js";
-import e from "express";
-dotenv.config();
-const allowedTables = ["users", "visited_countries"];
-const allowedColumns = ["*", "id", "user_name", "email", "country_code"];
+
 const saltRounds = 7;
 
 export const loginUser = async (req, res) => {
@@ -19,7 +15,21 @@ export const loginUser = async (req, res) => {
       return res.status(401).json({ message: "User not found!" });
     const isMatch = await compare(password, user.password);
     if (isMatch) {
-      return res.status(200).json({ message: "success", user: user });
+      const visited = await getAllFromTable(
+        "visited_countries",
+        "user_id",
+        user.id
+      );
+      const visitedCountriesList = visited.map((v) => v.country_code);
+      return res.status(200).json({
+        message: "success",
+        user: {
+          id: user.id,
+          email: user.email,
+          user_name: user.user_name,
+          visited_countries: visitedCountriesList || [],
+        },
+      });
     } else {
       return res.status(400).json({ message: "Wrong password, try again!" });
     }

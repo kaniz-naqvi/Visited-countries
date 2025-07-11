@@ -6,6 +6,8 @@ const allowedColumns = [
   "email",
   "password",
   "country_code",
+  "country_name",
+  "user_id",
 ];
 
 export const validateTable = (table) => {
