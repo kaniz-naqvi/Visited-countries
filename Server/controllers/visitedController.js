@@ -1,7 +1,8 @@
 import { addValuesInTable, getAllFromTable } from "../sql/sqlCommand.js";
 
 export const addCountry = async (req, res) => {
-  const { country_name, user_id } = req.body;
+  const { country_name } = req.body;
+  const user_id = req.session.user.id;
   try {
     const country = await getAllFromTable(
       "countries",
@@ -35,7 +36,8 @@ export const addCountry = async (req, res) => {
 };
 
 export const getCountriesList = async (req, res) => {
-  const { userId } = req.params;
+  const userId = req.session.user.id;
+  console.log("user", userId);
 
   try {
     const user = await getAllFromTable("users", "id", userId);

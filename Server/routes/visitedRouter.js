@@ -7,5 +7,5 @@ import {
 const visitedRouter = Router();
 
 visitedRouter.post("/", addCountry);
-visitedRouter.get("/:userId", getCountriesList);
+visitedRouter.get("/", getCountriesList);
 export default visitedRouter;

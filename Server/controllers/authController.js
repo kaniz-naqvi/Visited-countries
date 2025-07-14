@@ -21,6 +21,10 @@ export const loginUser = async (req, res) => {
         user.id
       );
       const visitedCountriesList = visited.map((v) => v.country_code);
+      req.session.user = {
+        id: user.id,
+        username: user.user_name,
+      };
       return res.status(200).json({
         message: "success",
         user: {
@@ -61,12 +65,49 @@ export const signinUser = async (req, res) => {
         email: email,
       },
     });
-
-    return res
-      .status(201)
-      .json({ message: "User added successfully", user: newUser });
+    req.session.user = {
+      id: newUser.id,
+      username: newUser.user_name,
+    };
+    return res.status(201).json({
+      message: "User added successfully",
+      authenticated: true,
+      user: newUser,
+    });
   } catch (error) {
     console.error("Signin Error:", error);
     return res.status(500).json({ message: "Server error", error });
+  }
+};
+
+export const checkAuth = async (req, res) => {
+  if (!req.session?.user) {
+    return res.status(401).json({ message: "Not authenticated" });
+  }
+
+  try {
+    const visited = await getAllFromTable(
+      "visited_countries",
+      "user_id",
+      req.session.user.id
+    );
+
+    const visitedCountriesList = visited.map((v) => v.country_code);
+
+    return res.status(200).json({
+      message: "Authenticated",
+      authenticated: true,
+      user: {
+        id: req.session.user.id,
+        user_name: req.session.user.username,
+        visited_countries: visitedCountriesList,
+      },
+    });
+  } catch (error) {
+    return res.status(500).json({
+      authenticated: false,
+      message: "Error fetching user data",
+      error,
+    });
   }
 };

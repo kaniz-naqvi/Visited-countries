@@ -4,9 +4,21 @@ import cors from "cors";
 import authRouter from "./routes/authRouter.js";
 import morgan from "morgan";
 import visitedRouter from "./routes/visitedRouter.js";
+import session from "express-session";
 
 const app = express();
 app.use(express.json());
+app.use(
+  session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 48,
+      httpOnly: true,
+    },
+  })
+);
 const port = 3000;
 dotenv.config();
 app.use(cors());
