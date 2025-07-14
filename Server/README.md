@@ -10,6 +10,7 @@ _Replace with your deployed server URL when live._
 **Description:** Register a new user.
 
 **Request**
+**Note:** All feilds are required
 
 ```json
 {
@@ -123,3 +124,16 @@ _Replace with your deployed server URL when live._
   "countries": ["KP", "PK", "IR"]
 }
 ```
+
+---
+
+## ⚠️ Authentication Note
+
+At application load (e.g., when user visits the site or refreshes),  
+you should call the `GET /api/auth/me` endpoint to:
+
+- Check if the user is already authenticated via cookies.
+- Redirect them to `/home` if authenticated.
+- Redirect to `/login` if not authenticated.
+
+This check ensures secure and user-friendly navigation throughout the app.
